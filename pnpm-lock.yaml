@@ -1,7 +1,5 @@
 dependencies:
-  csstype: 2.6.7
   is: /@alloc/is/1.2.0
-  param-case: 3.0.1
   wana: 0.10.7_react@16.12.0
 devDependencies:
   '@babel/core': 7.7.4
@@ -1763,6 +1761,7 @@ packages:
     resolution:
       integrity: sha512-GBrLZYZ4X4x6/QEoBnIrqb8B/f5l4+8me2dkom/j1Gtbxy0kBv6OGzKuAsGM75bkGwGAFkt56Iwg28S3XTZgSA==
   /csstype/2.6.7:
+    dev: true
     resolution:
       integrity: sha512-9Mcn9sFbGBAdmimWb2gLVDtFJzeKtDGIr76TUqmjZrw9LFXBMSU70lcs+C0/7fyCd6iBDqmksUcCOUIkisPHsQ==
   /dashdash/1.14.1:
@@ -1872,12 +1871,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-raigMkn7CJNNo6Ihro1fzG7wr3fHuYVytzquZKX5n0yizGsTcYgzdIUwj1X9pK0VvjeihV+XiclP+DjwbsSKug==
-  /dot-case/3.0.1:
-    dependencies:
-      no-case: 3.0.1
-    dev: false
-    resolution:
-      integrity: sha512-PZqwKvBN+ybVtYwjDX5BTtw2Dj6/ypwwkQj2V2ZzFHH08LShkLRVD9zr7jvh1A34A8XDVHb7CcRFrLbRTablqw==
   /ecc-jsbn/0.1.2:
     dependencies:
       jsbn: 0.1.1
@@ -3193,10 +3186,6 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
-  /lower-case/2.0.0:
-    dev: false
-    resolution:
-      integrity: sha512-OJifkIqIt8iu216sXZ0Fpo5tK4QhJjOYQIUd09SNkoc71NvU9157VTXsT4aRsx7TTpCtykmbCYal3B7y5L9/wg==
   /make-dir/2.1.0:
     dependencies:
       pify: 4.0.1
@@ -3345,12 +3334,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==
-  /no-case/3.0.1:
-    dependencies:
-      lower-case: 2.0.0
-    dev: false
-    resolution:
-      integrity: sha512-Ztcsd1yeHK915kymn/544pEoxL0rrzRL6WBlYexz0/Msikdj98f54DE2JliJcrt8IQdfPqrD3WOfQkU5AC+VOg==
   /node-int64/0.4.0:
     dev: true
     resolution:
@@ -3539,12 +3522,6 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-R4nPAVTAU0B9D35/Gk3uJf/7XYbQcyohSKdvAxIRSNghFl4e71hVoGnBNQz9cWaXxO2I10KTC+3jMdvvoKw6dQ==
-  /param-case/3.0.1:
-    dependencies:
-      dot-case: 3.0.1
-    dev: false
-    resolution:
-      integrity: sha512-lZMlNdvO7XU8clYJzy4aqKZjfIkBJPlYhmrAox9MeCsNu9X/7FU686HwX9VC4ROJMpXtLEm2DYGNgaSomqoFxA==
   /parse-json/4.0.0:
     dependencies:
       error-ex: 1.3.2
@@ -3682,10 +3659,10 @@ packages:
       react-is: 16.12.0
     resolution:
       integrity: sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
-  /psl/1.5.0:
+  /psl/1.6.0:
     dev: true
     resolution:
-      integrity: sha512-4vqUjKi2huMu1OJiLhi3jN6jeeKvMZdI1tYgi/njW5zV52jNLgSAZSdN16m9bJFe61/cT8ulmw4qFitV9QRsEA==
+      integrity: sha512-SYKKmVel98NCOYXpkwUqZqh0ahZeeKfmisiLIcEZdsb+WbLv02g/dI5BUmZnIyOe7RzZtLax81nnb2HbvC2tzA==
   /pump/3.0.0:
     dependencies:
       end-of-stream: 1.4.4
@@ -4355,7 +4332,7 @@ packages:
       integrity: sha512-FWtleNAtZ/Ki2qtqej2CXTOayOH9bHDQF+Q48VpWyDXjbYxA4Yz8iDB31zXOBUlOHHKidDbqGVrTUvQMPmBGBw==
   /tough-cookie/2.4.3:
     dependencies:
-      psl: 1.5.0
+      psl: 1.6.0
       punycode: 1.4.1
     dev: true
     engines:
@@ -4364,7 +4341,7 @@ packages:
       integrity: sha512-Q5srk/4vDM54WJsJio3XNn6K2sCG+CQ8G5Wz6bZhRZoAe/+TxjWB/GlFAnYEbkYVlON9FMk/fE3h2RLpPXo4lQ==
   /tough-cookie/2.5.0:
     dependencies:
-      psl: 1.5.0
+      psl: 1.6.0
       punycode: 2.1.1
     dev: true
     engines:
@@ -4808,10 +4785,8 @@ specifiers:
   '@types/react': ^16.9.14
   babel-jest: ^24.9.0
   babel-plugin-transform-class-properties: ^6.24.1
-  csstype: ^2.6.7
   is: 'npm:@alloc/is@^1.2.0'
   jest: ^24.9.0
-  param-case: ^3.0.1
   prettier: ^1.19.1
   react: ^16.12.0
   react-dom: ^16.12.0
