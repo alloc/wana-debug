@@ -1,5 +1,5 @@
 import is from 'is'
-import { $$, $O, no } from 'wana'
+import { $$, no } from 'wana'
 
 interface ConsoleFormatter {
   header: (object: any, config: any) => any
@@ -7,19 +7,21 @@ interface ConsoleFormatter {
   body?: (object: any, config: any) => any
 }
 
-const defused = new Map<object, object>()
-
-declare const window: any
-window.defused = defused
+const isCopy = Symbol()
 
 export const proxyFormatter: ConsoleFormatter = {
   header: target => {
-    const object = unwrap(target)
-    if (is.function_(object)) {
-      return ['object', { object }]
+    if (target === window) {
+      return null
     }
-    if (object !== target || containsObservable(object)) {
-      return ['object', { object: defuse(object) }]
+    if (!target[isCopy]) {
+      const object = unwrap(target)
+      if (is.function_(object) && object !== target) {
+        return ['object', { object }]
+      }
+      if (is.object(object)) {
+        return ['object', { object: defuse(object) }]
+      }
     }
     return null
   },
@@ -32,44 +34,60 @@ function unwrap(target: any) {
   return is.function_(target) ? target[$$] || target : no(target)
 }
 
-function containsObservable(target: any) {
-  if (is.object(target) && target !== window) {
-    for (const name in getOwnPropertyNames(target)) {
-      const desc = Object.getOwnPropertyDescriptor(target, name)
-      if (desc && desc.value && desc.value[$O]) {
-        return true
-      }
-    }
-  }
-  return false
-}
+function defuse(target: object): object {
+  return recurse(target)
 
-function defuse(target: object) {
-  let copy = defused.get(target)
-  if (!copy) {
-    copy = is.array(target)
-      ? target.map(unwrap)
+  function recurse(target: any): any {
+    if (target === window) {
+      return target
+    }
+    target = unwrap(target)
+    if (is.function_(target)) {
+      return target
+    }
+    if (isCopyable(target)) {
+      const copy = createCopy(target)
+      copy[isCopy] = true
+      return copy
+    }
+    return target
+  }
+
+  function createCopy(target: any): any {
+    if (target[isCopy]) {
+      return target
+    }
+    return is.array(target)
+      ? target.map(recurse)
       : is.set(target)
-      ? new Set(Array.from(target, unwrap))
+      ? new Set(Array.from(target, recurse))
       : is.map(target)
-      ? new Map(Array.from(target, unwrap))
+      ? new Map(Array.from(target, recurse))
       : defuseProps(target)
-
-    defused.set(target, copy)
   }
-  return copy
+
+  function defuseProps(target: object): object {
+    const copy = Object.create(Object.getPrototypeOf(target))
+    getOwnPropertyNames(target).forEach(name => {
+      const prop = Object.getOwnPropertyDescriptor(target, name)!
+      if (!prop.get) {
+        prop.value = recurse(prop.value)
+      }
+      Object.defineProperty(copy, name, prop)
+    })
+    return copy
+  }
 }
 
-function defuseProps(target: object): object {
-  const copy = Object.create(Object.getPrototypeOf(target))
-  getOwnPropertyNames(target).forEach(name => {
-    const prop = Object.getOwnPropertyDescriptor(target, name)!
-    if (!prop.get) {
-      prop.value = unwrap(prop.value)
-    }
-    Object.defineProperty(copy, name, prop)
-  })
-  return copy
+function isCopyable(target: any) {
+  return (
+    is.object(target) &&
+    !is.date(target) &&
+    !is.regExp(target) &&
+    !is.nativePromise(target) &&
+    !is.weakMap(target) &&
+    !is.weakSet(target)
+  )
 }
 
 function getOwnPropertyNames(object: object) {
