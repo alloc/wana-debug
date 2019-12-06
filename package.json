@@ -13,7 +13,9 @@
     "test": "jest"
   },
   "dependencies": {
+    "csstype": "^2.6.7",
     "is": "npm:@alloc/is@^1.2.0",
+    "param-case": "^3.0.1",
     "wana": "^0.10.0"
   },
   "devDependencies": {
