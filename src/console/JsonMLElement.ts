@@ -1,4 +1,5 @@
-import { CSS, renderStyle, styles } from './styles'
+import CSS from 'csstype'
+import { renderStyle, styles } from './styles'
 
 type Attributes = { [key: string]: any }
 

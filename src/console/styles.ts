@@ -1,8 +1,6 @@
 import CSS from 'csstype'
 import { paramCase } from 'param-case'
 
-export { CSS }
-
 const nullStyle: CSS.Properties = { color: 'rgb(128, 128, 128)' }
 const stringStyle: CSS.Properties = {
   color: 'rgb(196, 26, 22)',
