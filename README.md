@@ -1,32 +1,36 @@
-# react-ch
+# @wana/debug
 
-The `Channel` class is used to achieve loose coupling between an event source and its subscribers. To notify subscribers, it must be called as a function.
+Debug utils for `wana`
 
-The `useChannel` hook has two different use cases.
+### Hooks
 
-- as a shortcut for `useConstant(() => new Channel(name))`
+- `useChangeLog`
+- `useObserverLog`
+- `useRenderLog`
 
-- for subscribing to a channel
+```tsx
+// Log changes to an observable object.
+// The 2nd argument is optional. 
+useChangeLog(object, { name, onChange })
 
-```ts
-const didLogin = useChannel<User>()
+// Log what's observed by a `withAuto` component on each render.
+// The name is optional.
+useObserverLog(name)
 
-// Listen for "didLogin" events while mounted.
-useChannel(didLogin, (user: User) => {...})
-
-// Send an event to subscribers.
-didLogin(user)
+// Log when a `withAuto` component renders (and why).
+useRenderLog()
 ```
 
-### Async decentralized work
+### Functions
 
-Channels can be used to depend on arbitrary work performed by subscribers. Every event has a promise that resolves with an array of return values (from subscribers).
+- `logChange`
+- `logChanges`
 
 ```ts
-// Use a channel to orchestrate animations.
-const willAppear = useChannel<[], void>()
-await willAppear()
+// Log a change object created by wana.
+// The targetId is optional.
+logChange(change, targetId)
 
-// In a deep descendant:
-useChannel(willAppear, () => animate(...))
+// Create an observer that logs changes to an observable object.
+logChanges(object, { name, onChange })
 ```
