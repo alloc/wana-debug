@@ -1,7 +1,7 @@
 import { getCurrentAuto, getDebug, $O } from 'wana'
 import { useEffect } from 'react'
 import { format } from './format'
-import is from 'is'
+import { is } from 'is'
 
 export function useObserverLog(name?: string) {
   const auto = getCurrentAuto()

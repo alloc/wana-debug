@@ -1,4 +1,4 @@
-import is from 'is'
+import { is } from 'is'
 
 type Indexable<T> = { [key: string]: T }
 

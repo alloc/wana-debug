@@ -1,5 +1,5 @@
 import { getDebug, Change } from 'wana'
-import is from 'is'
+import { is } from 'is'
 import { format } from './format'
 
 let prevTime = Date.now()

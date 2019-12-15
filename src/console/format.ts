@@ -1,4 +1,4 @@
-import is from 'is'
+import { is } from 'is'
 import { $$, no } from 'wana'
 
 interface ConsoleFormatter {
@@ -16,7 +16,7 @@ export const proxyFormatter: ConsoleFormatter = {
     }
     if (!target[isCopy]) {
       const object = unwrap(target)
-      if (is.function_(object) && object !== target) {
+      if (is.function(object) && object !== target) {
         return ['object', { object }]
       }
       if (is.object(object)) {
@@ -31,7 +31,7 @@ export const proxyFormatter: ConsoleFormatter = {
 }
 
 function unwrap(target: any) {
-  return is.function_(target) ? target[$$] || target : no(target)
+  return is.function(target) ? target[$$] || target : no(target)
 }
 
 function defuse(target: object): object {
@@ -42,7 +42,7 @@ function defuse(target: object): object {
       return target
     }
     target = unwrap(target)
-    if (is.function_(target)) {
+    if (is.function(target)) {
       return target
     }
     if (isCopyable(target)) {
@@ -84,7 +84,7 @@ function isCopyable(target: any) {
     is.object(target) &&
     !is.date(target) &&
     !is.regExp(target) &&
-    !is.nativePromise(target) &&
+    !is.promise(target) &&
     !is.weakMap(target) &&
     !is.weakSet(target)
   )

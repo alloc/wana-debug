@@ -13,7 +13,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "is": "npm:@alloc/is@^1.2.0",
+    "is": "npm:@alloc/is@^2.0.0",
     "wana": "^0.10.0"
   },
   "devDependencies": {
