@@ -1,6 +1,8 @@
 import { is } from 'is'
 import { $$, no } from 'wana'
 
+declare const window: any
+
 interface ConsoleFormatter {
   header: (object: any, config: any) => any
   hasBody: (object: any, config: any) => boolean | null
