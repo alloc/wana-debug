@@ -4,4 +4,12 @@ export {}
 declare global {
   // Provided by react-native
   const __DEV__: boolean
+  const console: {
+    log(...args: any[]): void
+    warn(...args: any[]): void
+    debug(...args: any[]): void
+    trace(): void
+    groupCollapsed(arg: string): void
+    groupEnd(): void
+  }
 }
