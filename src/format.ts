@@ -15,9 +15,9 @@ export function format(
         : values[key]
 
     const style =
-      key in styles ? styles[key] : is.string(value) ? 'color: #5162FF' : ''
+      key in styles ? styles[key] : is.string(value) ? 'color: #5162FF' : null
 
-    if (style) {
+    if (is.string(style)) {
       args.push(style, String(value), '')
       return '%c%s%c'
     }
