@@ -16,10 +16,12 @@ if (isDev) {
 }
 
 export function useRenderLog() {
-  const auto = getCurrentAuto()
-  if (!auto || !lastComponent) {
-    throw Error('Cannot call "useRenderLog" outside a "withAuto" component')
-  }
   const { depth } = useAutoContext()
-  logRender(auto, depth, lastComponent)
+  if (isDev) {
+    const auto = getCurrentAuto()
+    if (!auto || !lastComponent) {
+      throw Error('Cannot call "useRenderLog" outside a "withAuto" component')
+    }
+    logRender(auto, depth, lastComponent)
+  }
 }
