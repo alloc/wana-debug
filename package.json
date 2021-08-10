@@ -31,6 +31,6 @@
   },
   "peerDependencies": {
     "react": "*",
-    "wana": ">=0.13"
+    "wana": ">=0.12"
   }
 }
