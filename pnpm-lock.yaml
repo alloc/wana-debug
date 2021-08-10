@@ -3,17 +3,17 @@ lockfileVersion: 5.3
 specifiers:
   '@alloc/is-dev': ^1.2.2
   '@types/react': ~16.14.0
-  is: npm:@alloc/is@^2.0.0
+  is: npm:@alloc/is@^3.0.0
   prettier: ^1.19.1
   react: ^16.12.0
   tslint: ^5.20.1
   tslint-mango: ^0.1.12
   typescript: ^3.7.2
-  wana: '*'
+  wana: latest
 
 dependencies:
   '@alloc/is-dev': 1.2.2
-  is: /@alloc/is/2.1.2
+  is: /@alloc/is/3.1.1
 
 devDependencies:
   '@types/react': 16.14.12
@@ -22,20 +22,15 @@ devDependencies:
   tslint: 5.20.1_typescript@3.9.3
   tslint-mango: 0.1.12
   typescript: 3.9.3
-  wana: 0.13.11_react@16.13.1
+  wana: 0.13.12_react@16.13.1
 
 packages:
 
   /@alloc/is-dev/1.2.2:
     resolution: {integrity: sha512-EkpBVIODXFYUWxou3xJmRD+bmwYTOYMShG0tswjZ6uv0k7INOzXzp/uyjOdSZ4K9ygp8mNCLOxjCkiRfd7TDYA==}
 
-  /@alloc/is/2.1.2:
-    resolution: {integrity: sha512-/qJui7XCIMEDOzpMPZUXYTy4hHdBKsx6sQnSDIOw8cFW/BL4AqZSt0B/DkB+eW9PDa0zD27zp7jyziQfeaYycQ==}
-    dev: false
-
   /@alloc/is/3.1.1:
     resolution: {integrity: sha512-V6u16s1IfbygA3PbvSSJ457G0p5HeTEe9jEvx5/td92m7IWpZEwciwA4Qj8gNH5+r+xMHR7xuXkfFpPWxUja2Q==}
-    dev: true
 
   /@alloc/queue-microtask/1.1.5:
     resolution: {integrity: sha512-+11mLrN7Xu9a9uU0fdsZICVDi8vhxtqxaqX+nPyPXmrDJBPUqKc34aJak8KEdjkhhGFTuqs8ZiiuwP423Do14w==}
@@ -481,8 +476,8 @@ packages:
       react: 16.13.1
     dev: true
 
-  /wana/0.13.11_react@16.13.1:
-    resolution: {integrity: sha512-knD/hAkQPdhxg2vgfy8oxqugmy+xMGB3kO5p4RFynFqsBYRmJScVD4U07CTYtnADZHt12N/0R3RcOcJtx3pgcA==}
+  /wana/0.13.12_react@16.13.1:
+    resolution: {integrity: sha512-d/Fb6C1e3SJBY4xXER4jCQDpeKXMxqWv22MtccCvJ8iIccHittIYYeEIn3/oJ4uKLlUJiltsQ59XuqgHsRUm8w==}
     peerDependencies:
       react: '>=16.9'
     dependencies:
