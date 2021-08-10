@@ -15,6 +15,7 @@
     "prepare": "yarn build"
   },
   "dependencies": {
+    "@alloc/is-dev": "^1.2.2",
     "is": "npm:@alloc/is@^2.0.0"
   },
   "devDependencies": {

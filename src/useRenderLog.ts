@@ -1,12 +1,13 @@
-import { getCurrentAuto, globals, useAutoContext } from 'wana'
+import { isDev } from '@alloc/is-dev'
+import { getCurrentAuto, global as wana, useAutoContext } from 'wana'
 import { logRender } from './logRender'
 
 // Track which component began rendering most recently.
 let lastComponent: React.ComponentType | undefined
 
-if (__DEV__) {
-  const { onRender } = globals
-  globals.onRender = (auto, depth, component) => {
+if (isDev) {
+  const { onRender } = wana
+  wana.onRender = (auto, depth, component) => {
     lastComponent = component
     if (onRender) {
       onRender(auto, depth, component)

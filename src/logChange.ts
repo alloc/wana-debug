@@ -1,4 +1,5 @@
 /* tslint:disable:no-console */
+import { isDev } from '@alloc/is-dev'
 import { is } from 'is'
 import { Change, getDebug } from 'wana'
 import { format } from './format'
@@ -44,7 +45,7 @@ export function logChange(change: Change, targetId?: string) {
     change.target
   )
 
-  if (__DEV__ && console.groupCollapsed) {
+  if (isDev && console.groupCollapsed) {
     const now = Date.now()
     console.groupCollapsed(`Stack trace (+${now - prevTime}ms)`)
     console.trace()
