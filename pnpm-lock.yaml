@@ -22,25 +22,24 @@ devDependencies:
   tslint: 5.20.1_typescript@3.9.3
   tslint-mango: 0.1.12
   typescript: 3.9.3
-  wana: 0.11.7_react@16.13.1
+  wana: 0.13.11_react@16.13.1
 
 packages:
 
-  /@alloc/is-dev/1.2.0:
-    resolution: {integrity: sha512-h7hYO5kyrYC03O64XBLK80b6bNUYQCFPJayI96spdZ70BUi+nWDV/gEpVmx2gy3OgSSiTDOxS6d2bdasMiEGQQ==}
-    dev: true
-
   /@alloc/is-dev/1.2.2:
     resolution: {integrity: sha512-EkpBVIODXFYUWxou3xJmRD+bmwYTOYMShG0tswjZ6uv0k7INOzXzp/uyjOdSZ4K9ygp8mNCLOxjCkiRfd7TDYA==}
-    dev: false
-
-  /@alloc/is/2.1.1:
-    resolution: {integrity: sha512-3+HoecoYWYiCqyREKYVVXqwQCl2EBTI05e8ELcxpGQnV3I6cD/nFtEefQcgcK6AtbolCMQQz3oeyWx5u3fwiRg==}
-    dev: true
 
   /@alloc/is/2.1.2:
     resolution: {integrity: sha512-/qJui7XCIMEDOzpMPZUXYTy4hHdBKsx6sQnSDIOw8cFW/BL4AqZSt0B/DkB+eW9PDa0zD27zp7jyziQfeaYycQ==}
     dev: false
+
+  /@alloc/is/3.1.1:
+    resolution: {integrity: sha512-V6u16s1IfbygA3PbvSSJ457G0p5HeTEe9jEvx5/td92m7IWpZEwciwA4Qj8gNH5+r+xMHR7xuXkfFpPWxUja2Q==}
+    dev: true
+
+  /@alloc/queue-microtask/1.1.5:
+    resolution: {integrity: sha512-+11mLrN7Xu9a9uU0fdsZICVDi8vhxtqxaqX+nPyPXmrDJBPUqKc34aJak8KEdjkhhGFTuqs8ZiiuwP423Do14w==}
+    dev: true
 
   /@babel/code-frame/7.10.1:
     resolution: {integrity: sha512-IGhtTmpjGbYzcEDOw7DcQtbQSXcG9ftmAXtWTu9V936vDye4xjjekktFAtgZsWpzTj/X01jocB46mTywm/4SZw==}
@@ -58,12 +57,6 @@ packages:
       '@babel/helper-validator-identifier': 7.10.1
       chalk: 2.4.2
       js-tokens: 4.0.0
-    dev: true
-
-  /@babel/runtime/7.10.2:
-    resolution: {integrity: sha512-6sF3uQw2ivImfVIl62RZ7MXhO2tap69WeWK57vAaimT6AZbE4FbqjdEJIN1UqoD6wI6B+1n9UiagafH1sxjOtg==}
-    dependencies:
-      regenerator-runtime: 0.13.5
     dev: true
 
   /@phenomnomnominal/tsquery/4.1.0_typescript@3.9.3:
@@ -289,8 +282,8 @@ packages:
       react-is: 16.13.1
     dev: true
 
-  /queue-microtask/1.1.2:
-    resolution: {integrity: sha512-F9wwNePtXrzZenAB3ax0Y8TSKGvuB7Qw16J30hspEUTbfUM+H827XyN3rlpwhVmtm5wuZtbKIHjOnwDn7MUxWQ==}
+  /react-batched-updates/1.0.1:
+    resolution: {integrity: sha512-NrHhi0/E4/cvVjCt7bv/E6oHiJCDSLglWRJgLRIHtqloSJ9m9ZErvrxw1Akc9IvtZBe+dsY67d5qWbShlfmUCQ==}
     dev: true
 
   /react-is/16.13.1:
@@ -312,10 +305,6 @@ packages:
       loose-envify: 1.4.0
       object-assign: 4.1.1
       prop-types: 15.7.2
-    dev: true
-
-  /regenerator-runtime/0.13.5:
-    resolution: {integrity: sha512-ZS5w8CpKFinUzOwW3c83oPeVXoNsrLsaCoLtJvAClH135j/R77RuymhiSErhm2lKcwSCIpmvIWSbDkIfAqKQlA==}
     dev: true
 
   /resolve/1.17.0:
@@ -484,26 +473,26 @@ packages:
     hasBin: true
     dev: true
 
-  /use-memo-one/1.1.1_react@16.13.1:
-    resolution: {integrity: sha512-oFfsyun+bP7RX8X2AskHNTxu+R3QdE/RC5IefMbqptmACAA/gfol1KDD5KRzPsGMa62sWxGZw+Ui43u6x4ddoQ==}
+  /use-memo-one/1.1.2_react@16.13.1:
+    resolution: {integrity: sha512-u2qFKtxLsia/r8qG0ZKkbytbztzRb317XCkT7yP8wxL0tZ/CzK2G+WWie5vWvpyeP7+YoPIwbJoIHJ4Ba4k0oQ==}
     peerDependencies:
-      react: ^16.8.0
+      react: ^16.8.0 || ^17.0.0
     dependencies:
       react: 16.13.1
     dev: true
 
-  /wana/0.11.7_react@16.13.1:
-    resolution: {integrity: sha512-WnXTtE5rWu/VL3uyUF2UHZVz7w2DOzm5tL6/ilrXhwz/Cif0ZupmP1RNZdAXOPWniEeL60e7d0wQMdEhpEoLLw==}
+  /wana/0.13.11_react@16.13.1:
+    resolution: {integrity: sha512-knD/hAkQPdhxg2vgfy8oxqugmy+xMGB3kO5p4RFynFqsBYRmJScVD4U07CTYtnADZHt12N/0R3RcOcJtx3pgcA==}
     peerDependencies:
       react: '>=16.9'
     dependencies:
-      '@alloc/is': 2.1.1
-      '@alloc/is-dev': 1.2.0
-      '@babel/runtime': 7.10.2
-      queue-microtask: 1.1.2
+      '@alloc/is': 3.1.1
+      '@alloc/is-dev': 1.2.2
+      '@alloc/queue-microtask': 1.1.5
       react: 16.13.1
+      react-batched-updates: 1.0.1
       react-layout-effect: 1.0.5_react@16.13.1
-      use-memo-one: 1.1.1_react@16.13.1
+      use-memo-one: 1.1.2_react@16.13.1
     dev: true
 
   /wrappy/1.0.2:
