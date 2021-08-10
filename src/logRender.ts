@@ -3,12 +3,12 @@ import { getDebug, Auto } from 'wana'
 export function logRender(
   auto: Auto,
   depth: number,
-  component: React.ComponentType<any>
+  component: React.ComponentType<any> & { __render?: any }
 ) {
   if (!component.displayName) {
     console.warn(
       'Component without "displayName" is harder to debug',
-      component
+      component.__render || component
     )
   }
   const indent = ' '.repeat(depth)
