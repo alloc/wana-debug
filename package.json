@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@alloc/is-dev": "^1.2.2",
-    "is": "npm:@alloc/is@^2.0.0"
+    "is": "npm:@alloc/is@^3.0.0"
   },
   "devDependencies": {
     "@types/react": "~16.14.0",
