@@ -5,13 +5,15 @@
   "author": "Alec Larson",
   "license": "MIT",
   "repository": "alloc/wana-debug",
-  "main": "dist/index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
   "files": [
     "dist",
     "src"
   ],
   "scripts": {
-    "build": "tsc -p .",
+    "dev": "tsc -p . -w",
+    "build": "tsc -p . && tsc -p . --outDir dist/esm --module esnext",
     "prepare": "yarn build"
   },
   "dependencies": {
@@ -19,7 +21,7 @@
     "is": "npm:@alloc/is@^2.0.0"
   },
   "devDependencies": {
-    "@types/react": "^16.9.14",
+    "@types/react": "~16.14.0",
     "prettier": "^1.19.1",
     "react": "^16.12.0",
     "tslint": "^5.20.1",
