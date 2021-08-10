@@ -13,9 +13,7 @@ export function logRender(
   }
   const indent = ' '.repeat(depth)
   const debug = getDebug(auto)
-  console.debug(
-    indent + '<' + debug.name + ' />',
-    '⚛️' + debug.renders,
-    debug.actions
-  )
+  console.debug(indent + '<' + debug.name + ' />', '⚛️' + debug.renders, [
+    ...debug.actions!,
+  ])
 }
